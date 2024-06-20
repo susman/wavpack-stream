@@ -4,10 +4,15 @@ if ENABLE_APPS
   MAYBE_APPS = cli
 endif
 
-SUBDIRS = src include $(MAYBE_APPS) man
+if ENABLE_MAN
+  MAYBE_MAN = man
+endif
+
+SUBDIRS = src include $(MAYBE_APPS) $(MAYBE_MAN)
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = wavpack-stream.pc
+pkginclude_HEADERS = include/wavpack-stream.h
 
 MAINTAINERCLEANFILES = \
 	configure \
@@ -22,4 +27,3 @@ MAINTAINERCLEANFILES = \
 	install-sh
 
 EXTRA_DIST = doc/*.pdf doc/*.html doc/*.css
-

@@ -15,6 +15,7 @@ cli/wvunpack-stream
 cli/wvtest-stream
 compile
 configure
+configure~
 config.guess
 config.log
 config.status
